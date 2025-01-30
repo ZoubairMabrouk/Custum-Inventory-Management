@@ -1,0 +1,16 @@
+<odoo>
+<data>
+    <record id="rule_inventory_adjustment_user" model="ir.rule">
+        <field name="name">Inventory Adjustment Rule</field>
+        <field name="model_id" ref="model_inventory_adjustment"/>
+        <field name="domain_force">[]</field>
+        <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+
+    <record id="rule_product_details_user" model="ir.rule">
+        <field name="name">Product Details Rule</field>
+        <field name="model_id" ref="model_product_details"/>
+        <field name="domain_force">[]</field>
+        <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+    </record></data>
+</odoo>

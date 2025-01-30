@@ -1,0 +1,19 @@
+<odoo>
+    <!-- Main Inventory Menu -->
+    <data>
+        <menuitem id="menu_inventory" name="Inventory Management"
+            web_icon="icon.png"
+            sequence='20' />
+
+        <!-- Submenus under Inventory -->
+        <menuitem id="menu_inventory_products" name="Products" parent="menu_inventory" />
+        <menuitem id="menu_inventory_adjustments" name="Inventory Adjustments"
+            parent="menu_inventory" />
+
+        <!-- Submenu Items -->
+        <menuitem id="menu_inventory_product_details" name="Product Details"
+            parent="menu_inventory_products" action="action_product_details" />
+        <menuitem id="menu_inventory_adjustment_details" name="Adjustment Details"
+            parent="menu_inventory_adjustments" action="action_inventory_adjustments" />
+    </data>
+</odoo>

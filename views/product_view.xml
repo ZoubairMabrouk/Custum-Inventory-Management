@@ -1,0 +1,35 @@
+<odoo>
+    <!-- Product Details Form View -->
+    <record id="view_model_product_form" model="ir.ui.view">
+        <field name="name">product.details.form</field>
+        <field name="model">product.details</field>
+        <field name="arch" type="xml">
+            <form string="Product Details">
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="description" />
+                        <field name="product_id" widget="many2one_tags" />
+                        <field name="stock_quantity" />
+                        <field name="warehouse_location" />
+                        <field name="price" widget="float" attrs="{'required': [('price', '!=', 0)]}" />
+                        
+                        <button name="button_product_details_save" type="object"
+                        string="save" class="btn-primary" />
+                        <button name="button_product_details_save" type="object"
+                        string="cancel" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="action_product_details" model="ir.actions.act_window">
+        <field name="name">Product Details</field>
+        <field name="res_model">product.details</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+</odoo>

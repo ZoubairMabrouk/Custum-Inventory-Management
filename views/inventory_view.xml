@@ -1,0 +1,39 @@
+<odoo>
+    <data>
+        <!-- Vue formulaire ajustement d'inventaire -->
+        <record id="view_inventory_adjustment_form" model="ir.ui.view">
+            <field name="name">Formulaire Ajustement Inventaire</field>
+            <field name="model">inventory.adjustment</field>
+            <field name="arch" type="xml">
+                <form string="Ajustement d'Inventaire">
+                    <sheet>
+                        <group>
+                            <field name="name" readonly="1"/>
+                            <field name="product_id"/>
+                            <field name="quantity"/>
+                            <field name="transaction_price"/>
+                            <field name="date"/>
+                            <field name="adjustment_type"/>
+                            <field name="customer_id"/>
+                            <field name="reason"/>
+                            <field name="state" readonly="1"/>
+                            <field name="invoice_id" readonly="1" string="Facture Générée"/>
+                            <button name="action_validate" type="object" string="Valider" class="btn-primary" attrs="{'invisible': [('state', '=', 'done')]}"/>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button name="action_validate" type="object" string="Valider" class="btn-primary" attrs="{'invisible': [('state', '=', 'done')]}"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="action_inventory_adjustments" model="ir.actions.act_window">
+        <field name="name">Inventory Adjustments</field>
+        <field name="res_model">inventory.adjustment</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    </data>
+</odoo>
+
+
+     
